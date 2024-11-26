@@ -1,4 +1,8 @@
 export default Contact() = ()=>{
-    return;
+    return(
+    <div>
+
+    <h1>Welocome to Home page</h1>
+</div>);
 
 }
