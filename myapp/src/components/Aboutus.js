@@ -1,4 +1,4 @@
-export default Aboutus() = ()=>{
+export default function Aboutus(){
     return(
         <div>
 
