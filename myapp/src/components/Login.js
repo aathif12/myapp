@@ -1,28 +1,46 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-export default function Login(){
-    const navigate = useNavigate();
-    const authenticate = ()=>{
-        navigate('/dashboard');
-    }
+export default function Login() {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-    const usernameCheck = ()=>{
-                
+  const authenticate = (e) => {
+    e.preventDefault();
+    if (username === "admin" && password === "password123") {
+      navigate("/dashboard");
+    } else {
+      setError("Invalid username or password");
     }
-    return(
-        <>
-        <div>
-            <h1>Login Here </h1>
-            <form>
-            <input type="text" name="username" 
-            ></input><br/><br/>
-            <input type="password" name="pass"></input><br/><br/>
-            <button onClick={authenticate}>Login
-           
-            </button>
-            </form>
-        </div>
-        </>
-    )
+  };
+
+  return (
+    <div className="login-container">
+      <h1>Login Here</h1>
+      <form onSubmit={authenticate}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <br />
+        <input
+          type="password"
+          name="pass"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+      {error && <p className="error">{error}</p>}
+    </div>
+  );
 }
