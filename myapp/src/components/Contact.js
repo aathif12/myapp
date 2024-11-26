@@ -2,7 +2,7 @@ export default function Contact(){
     return(
     <div>
 
-    <h1>Welocome to Home page</h1>
+    <h1>Welocome to Contact page</h1>
 </div>);
 
 }

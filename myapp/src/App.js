@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
 import {BrowserRouter as Router,Routes,Route,Link,NavLink} from 'react-router-dom';
 import Contact from './components/Contact';
 import Aboutus from './components/Aboutus';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
         <nav>
           <ul>
-            <li>
+            {/* <li>
               <Link to='/home'>Home</Link>
             </li>
             <li>
@@ -21,14 +22,16 @@ function App() {
             </li>
             <li>
               <Link to='/aboutus'>Abous</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
-     
+      
       <Routes>
-        <Route path='/home' element={<Home/>}></Route>
+        {/* <Route path='/home' element={<Home/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
-        <Route path='/aboutus' element={<Aboutus/>}></Route>
+        <Route path='/aboutus' element={<Aboutus/>}></Route> */}
+        <Route path='/' element={<Login/>}></Route>
+        <Route path='/dashboard' element={<Dashboard/>}></Route>
       </Routes>
       </Router>
     </div>
