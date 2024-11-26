@@ -6,6 +6,9 @@ function App() {
   return (
     <div className="App">
       <Students/>
+      <Router>
+        
+      </Router>
     </div>
   );
 }
